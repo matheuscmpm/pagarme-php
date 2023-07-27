@@ -100,4 +100,17 @@ class BulkAnticipations extends Endpoint
             ['query' => $payload]
         );
     }
+
+    /**
+     * @param array $payload
+     * @return \ArrayObject
+     */
+    public function simulate(array $payload)
+    {
+        return $this->client->request(
+            self::GET,
+            Routes::bulkAnticipations()->simulate($payload['recipient_id']),
+            ['json' => $payload]
+        );
+    }
 }

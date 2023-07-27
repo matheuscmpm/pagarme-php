@@ -185,6 +185,10 @@ class Routes
             return "recipients/$recipientId/bulk_anticipations/$bulkAnticipationId";
         };
 
+        $anonymous->simulate = static function ($recipientId) {
+            return "recipients/$recipientId/bulk_anticipations/simulate";
+        };
+
         return $anonymous;
     }
 
